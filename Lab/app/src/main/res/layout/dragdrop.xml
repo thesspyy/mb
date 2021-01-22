@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="248dp">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/txtScore"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="106dp"
+                android:layout_marginBottom="26dp"
+                android:text="drag and drop"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtScore"
+                android:layout_width="171dp"
+                android:layout_height="51dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="99dp"
+                android:layout_marginBottom="105dp"
+                android:background="#FFEB3B"
+                android:gravity="center"
+                android:text="Score :"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="322dp"
+            android:background="#009688">
+
+            <Button
+                android:id="@+id/btnYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginBottom="264dp"
+                android:tag="Yes"
+                android:text="Yes"
+                android:backgroundTint="#E91E63" />
+
+            <Button
+                android:id="@+id/btnNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="265dp"
+                android:backgroundTint="#E91E63"
+                android:tag="No"
+                android:text="No" />
+
+            <TextView
+                android:id="@+id/txtDestination"
+                android:layout_width="284dp"
+                android:layout_height="78dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="47dp"
+                android:layout_marginEnd="46dp"
+                android:layout_marginBottom="95dp"
+                android:background="#FFEB3B"
+                android:textAlignment="center"
+                android:textColor="#FF0000"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="144dp"
+                android:layout_marginBottom="60dp"
+                android:text="DROP ABOVE" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/dbtn_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="back" />
+
+                <Button
+                    android:id="@+id/dbtn_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="next" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
