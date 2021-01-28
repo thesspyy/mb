@@ -1,10 +1,14 @@
 package com.example.rssfeed;
 
 import android.app.Activity;
+
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+
 import android.widget.ArrayAdapter;
+
 import android.widget.ListView;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -16,25 +20,28 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+
 import java.util.List;
 
-public class main extends Activity {
+public class main extends Activity  {
     List headLine;
     ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rssmain);
-        if(Build.VERSION.SDK_INT > 9){
+        if (Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
         headLine = new ArrayList();
         listView = (ListView) findViewById(R.id.listView);
         getRss();
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1,headLine);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1, headLine);
         listView.setAdapter(adapter);
     }
+
 
     private InputStream getInputStream(URL url){
         try{
@@ -43,6 +50,7 @@ public class main extends Activity {
             return null;
         }
     }
+
 
     private void getRss() {
         String content="";
@@ -62,6 +70,7 @@ public class main extends Activity {
                         content = xpp.nextText();
                     } else if (xpp.getName().equalsIgnoreCase("link") && insideItem) {
                         content += "\n" + xpp.nextText();
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
                         headLine.add(content);
                     }
                 } else if (evenType == XmlPullParser.END_TAG && xpp.getName().equalsIgnoreCase("/item")) {
