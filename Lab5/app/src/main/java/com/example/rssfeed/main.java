@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 
+import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 
 import android.widget.ListView;
@@ -72,6 +73,10 @@ public class main extends Activity  {
                         content += "\n" + xpp.nextText();
                         Intent intent = new Intent(Intent.ACTION_VIEW);
                         headLine.add(content);
+                        webSettings = webMay.getSettings();
+                        webSettings.setJavaScriptEnabled(true);
+                        webMay.loadUrl("https://www.youtube.com/playlist?list=PLweLKr31p9Rn5seg4DB-po-qfpE3o_-BB");
+                        webMay.setWebViewClient(new WebViewClient());
                     }
                 } else if (evenType == XmlPullParser.END_TAG && xpp.getName().equalsIgnoreCase("/item")) {
                     insideItem = false;

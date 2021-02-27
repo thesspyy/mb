@@ -62,9 +62,8 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginBottom="264dp"
-                android:tag="Yes"
-                android:text="Yes"
-                android:backgroundTint="#E91E63" />
+                android:backgroundTint="#E91E63"
+                android:text="Yes" />
 
             <Button
                 android:id="@+id/btnNo"
